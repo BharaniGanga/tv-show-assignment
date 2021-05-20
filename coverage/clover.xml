@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1621447715150" clover="3.2.0">
+  <project timestamp="1621447715150" name="All files">
+    <metrics statements="44" coveredstatements="39" conditionals="4" coveredconditionals="3" methods="27" coveredmethods="23" elements="75" coveredelements="65" complexity="0" loc="44" ncloc="44" packages="4" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="App.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\App.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Service">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="api.js" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\Service\api.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="36" coveredstatements="31" conditionals="4" coveredconditionals="3" methods="23" coveredmethods="19"/>
+      <file name="DetailsPage.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\DetailsPage.vue">
+        <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+        <line num="89" count="4" type="stmt"/>
+        <line num="95" count="4" type="stmt"/>
+        <line num="103" count="4" type="stmt"/>
+        <line num="104" count="4" type="stmt"/>
+        <line num="116" count="5" type="stmt"/>
+        <line num="118" count="5" type="stmt"/>
+        <line num="119" count="5" type="stmt"/>
+        <line num="127" count="4" type="stmt"/>
+        <line num="129" count="4" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+      </file>
+      <file name="HomePage.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\HomePage.vue">
+        <metrics statements="17" coveredstatements="14" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="6"/>
+        <line num="69" count="3" type="stmt"/>
+        <line num="74" count="5" type="stmt"/>
+        <line num="90" count="5" type="stmt"/>
+        <line num="95" count="6" type="stmt"/>
+        <line num="96" count="6" type="stmt"/>
+        <line num="97" count="6" type="stmt"/>
+        <line num="98" count="42" type="stmt"/>
+        <line num="99" count="42" type="stmt"/>
+        <line num="100" count="42" type="cond" truecount="2" falsecount="0"/>
+        <line num="101" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="104" count="12" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="109" count="42" type="stmt"/>
+        <line num="114" count="42" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+      </file>
+      <file name="Navbar.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\Navbar.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+      </file>
+      <file name="Search.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\Search.vue">
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="5"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.router">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\router\index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
