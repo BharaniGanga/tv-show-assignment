@@ -14,12 +14,7 @@ const routes = [
     component: HomePage,
     props: true
   },
-  {
-    path: '*',
-    name: 'ErrorPage',
-    component: ErrorPage,
-    props: true
-  },
+ 
   {
     path: '/search',
     name: 'Search',
@@ -32,9 +27,16 @@ const routes = [
     component: DetailsPage,
     props: true
   },
+  {
+    path: '*',
+    name: 'ErrorPage',
+    component: ErrorPage,
+    props: true
+  },
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

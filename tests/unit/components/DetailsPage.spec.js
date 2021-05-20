@@ -12,7 +12,8 @@ jest.mock("axios", () => ({
         image:{
           medium:"https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"
         },
-        summary:"<p><b>Under the Dome</b></p>"
+        summary:"<p><b>Under the Dome</b></p>",
+
       }]
     })
 }));
@@ -41,7 +42,7 @@ describe('HomePage.vue', () => {
 it('should find b tag', () => {
     expect(wrapper.html()).toContain("b")
 });
-it('Should search the shows properly when mounted',async ()=>{
+it('Should search the showsDetails properly when mounted',async ()=>{
   let mockedResponse = [{"id":1,"url":"https://www.tvmaze.com/shows/1/under-the-dome","genres":
   ["Drama","Science-Fiction","Thriller"],"rating":{"average":6.6},
   "image":{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"},

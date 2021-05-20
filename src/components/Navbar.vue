@@ -1,12 +1,10 @@
 <template>
   <div>
-    <b-navbar toggleable="sm" type="dark" variant="info">
-      <b-navbar-brand class="text-white navbar ml-1">
+    <nav class="navbar navbar-light bg-warning">
         <router-link class="nav-link" :to="{ name: 'HomePage' }">
           <b-icon icon="display" class="navbar-icon"></b-icon>
           TVSHOWS
         </router-link>
-      </b-navbar-brand>
       <div class="ml-auto float-right">
         <div class="search">
           <div class="input-group col-md-3">
@@ -28,7 +26,7 @@
           </div>
         </div>
       </div>
-    </b-navbar>
+    </nav>
   </div>
 </template>
 <script>

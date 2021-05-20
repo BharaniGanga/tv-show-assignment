@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1621447715150" clover="3.2.0">
-  <project timestamp="1621447715150" name="All files">
-    <metrics statements="44" coveredstatements="39" conditionals="4" coveredconditionals="3" methods="27" coveredmethods="23" elements="75" coveredelements="65" complexity="0" loc="44" ncloc="44" packages="4" files="7" classes="7"/>
+<coverage generated="1621518079286" clover="3.2.0">
+  <project timestamp="1621518079287" name="All files">
+    <metrics statements="45" coveredstatements="41" conditionals="2" coveredconditionals="1" methods="30" coveredmethods="27" elements="77" coveredelements="69" complexity="0" loc="45" ncloc="45" packages="4" files="7" classes="7"/>
     <package name="src">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="App.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\App.vue">
@@ -20,7 +20,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="36" coveredstatements="31" conditionals="4" coveredconditionals="3" methods="23" coveredmethods="19"/>
+      <metrics statements="37" coveredstatements="33" conditionals="2" coveredconditionals="1" methods="26" coveredmethods="23"/>
       <file name="DetailsPage.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\DetailsPage.vue">
         <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
         <line num="89" count="4" type="stmt"/>
@@ -35,24 +35,25 @@
         <line num="132" count="0" type="stmt"/>
       </file>
       <file name="HomePage.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\HomePage.vue">
-        <metrics statements="17" coveredstatements="14" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="6"/>
-        <line num="69" count="3" type="stmt"/>
-        <line num="74" count="5" type="stmt"/>
-        <line num="90" count="5" type="stmt"/>
-        <line num="95" count="6" type="stmt"/>
+        <metrics statements="18" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="11" coveredmethods="10"/>
+        <line num="75" count="3" type="stmt"/>
+        <line num="80" count="5" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
+        <line num="94" count="6" type="stmt"/>
         <line num="96" count="6" type="stmt"/>
         <line num="97" count="6" type="stmt"/>
-        <line num="98" count="42" type="stmt"/>
-        <line num="99" count="42" type="stmt"/>
-        <line num="100" count="42" type="cond" truecount="2" falsecount="0"/>
-        <line num="101" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="102" count="0" type="stmt"/>
-        <line num="104" count="12" type="stmt"/>
-        <line num="105" count="0" type="stmt"/>
-        <line num="109" count="42" type="stmt"/>
-        <line num="114" count="42" type="stmt"/>
-        <line num="118" count="0" type="stmt"/>
-        <line num="123" count="1" type="stmt"/>
+        <line num="98" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="104" count="6" type="stmt"/>
+        <line num="105" count="6" type="stmt"/>
+        <line num="106" count="6" type="stmt"/>
+        <line num="107" count="18" type="stmt"/>
+        <line num="110" count="6" type="stmt"/>
+        <line num="130" count="6" type="stmt"/>
+        <line num="131" count="36" type="stmt"/>
+        <line num="134" count="18" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="153" count="1" type="stmt"/>
       </file>
       <file name="Navbar.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\Navbar.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>

@@ -53,14 +53,14 @@ describe('HomePage.vue', () => {
   it('is a Vue instance', () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
-   it('Should call redirectToShowDetailsPage when image is clicked',()=>{
+   it('Should call DetailsPage when image is clicked',()=>{
     wrapper.vm.goToDetails=jest.fn();
     wrapper.find('img').trigger('click')
     expect(wrapper.vm.goToDetails).toHaveBeenCalled();
     //const img = wrapper.find('img');
     //console.log("Image tag", img);
   }) 
-  it('Should call redirectToShowDetailsPage when image is clicked',() => {
+  it('shoud find the image',() => {
     const imgtest = wrapper.find('img');
     expect(imgtest.element.id).toBe('images');
   });
