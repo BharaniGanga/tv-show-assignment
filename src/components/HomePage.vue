@@ -174,7 +174,7 @@ img:hover {
   color: rgb(116, 199, 224);
 }
 .col-md-3{
-  padding: 15px;
+  padding: 1px;
 }
 .rating {
   font-style: oblique;

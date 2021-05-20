@@ -2,6 +2,15 @@ import { shallowMount, createLocalVue } from '@vue/test-utils';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import DetailsPage from '@/components/DetailsPage.vue';
 
+cast: [{person:{
+  id:1,
+  url:"https://www.tvmaze.com/people/1/mike-vogel",
+  name:"Mike Vogel",
+  image:
+  {
+    medium:"https://static.tvmaze.com/uploads/images/medium_portrait/0/1815.jpg"
+   },
+  }}]
 jest.mock("axios", () => ({
   get: () =>
     Promise.resolve({
@@ -14,7 +23,7 @@ jest.mock("axios", () => ({
         },
         summary:"<p><b>Under the Dome</b></p>",
 
-      }]
+      }],
     })
 }));
 
@@ -25,7 +34,7 @@ describe('HomePage.vue', () => {
     localVue.use(BootstrapVue);
     localVue.use(IconsPlugin);
     wrapper = shallowMount(DetailsPage, {
-      localVue,     
+      localVue,    
     });
   });
 

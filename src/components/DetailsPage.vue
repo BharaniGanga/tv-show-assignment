@@ -41,13 +41,12 @@
       <h3 style="color: red">Cast</h3>
       <div class="row">
         <div
-          class="movie-image col-md-3"
+          class="movie-image col-md-3 col-sm-3 col xs-3"
           v-for="(cast, index) in tvShowCast"
           :key="index"
         >
           <div class="container">
             <img
-              class=""
               width="50"
               height="100"
               :src="cast.person.image.medium"
@@ -64,11 +63,11 @@
       <h3 style="color: red">Seasons Available</h3>
       <div class="row">
         <div
-          class="movie-season col-md-3"
+          class="movie-season col-md-3 col-sm-3 col xs-3"
           v-for="(season, index) in showSeason"
           :key="index"
         >
-          <div class="container">
+          <div class="cast-post">
             <img
               class=""
               width="50"
@@ -78,7 +77,7 @@
               style="border-radius: 10%"
             />
             <div v-else>Image not Available</div>
-            <p style="color: blue">Season {{season.number}}</p>
+            
           </div>
         </div>
       </div>
@@ -153,6 +152,11 @@ export default {
 }
 .star-icon {
   color: rgb(207, 204, 25);
+}
+.cast-post{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 </style>
