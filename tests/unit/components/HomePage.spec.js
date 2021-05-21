@@ -7,17 +7,23 @@ import { routes } from '@/router/index';
 const categorisedShows = [{
   name: 'Thriller',
   shows: [{
-    id:2,
+    id: 2,
     name: "Under the Dome",
-    rating: { average: 6.6},
-    image: { medium: "https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"},
-    genres: ["Drama","Science-Fiction","Thriller"]
+    rating: { average: 6.6 },
+    image: { medium: "https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" },
+    genres: ["Drama", "Science-Fiction", "Thriller"]
   }]
 }]
 
 jest.mock('@/Service/api', () => ({
-  getAllShows: ()=>{return Promise.resolve( {data:[{"id":2,"name":"Under the Dome","rating":{"average":6.6},
-  "image":{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"},"genres":["Drama","Science-Fiction","Thriller"]}]} )},
+  getAllShows: () => {
+    return Promise.resolve({
+      data: [{
+        "id": 2, "name": "Under the Dome", "rating": { "average": 6.6 },
+        "image": { "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" }, "genres": ["Drama", "Science-Fiction", "Thriller"]
+      }]
+    })
+  },
 }));
 
 describe('HomePage.vue', () => {
@@ -35,43 +41,35 @@ describe('HomePage.vue', () => {
         return {
           showsList: [],
           categorisedShows: categorisedShows,
-          categories: [
-            "Action",
-            "Crime",
-            "Science-Fiction",
-            "Horror",
-            "Thriller",
-            "War",
-            "Western",
-          ],
+          categories: [],
         }
       }
-        
+
     });
   });
 
   it('is a Vue instance', () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
-   it('Should call DetailsPage when image is clicked',()=>{
-    wrapper.vm.goToDetails=jest.fn();
+  it('Should call DetailsPage when image is clicked', () => {
+    wrapper.vm.goToDetails = jest.fn();
     wrapper.find('img').trigger('click')
     expect(wrapper.vm.goToDetails).toHaveBeenCalled();
-    //const img = wrapper.find('img');
-    //console.log("Image tag", img);
-  }) 
-  it('shoud find the image',() => {
+  })
+  it('shoud find the image', () => {
     const imgtest = wrapper.find('img');
     expect(imgtest.element.id).toBe('images');
   });
-  it('calling the router',()=>{
-    wrapper.vm.$router.push= jest.fn();
+  it('calling the router', () => {
+    wrapper.vm.$router.push = jest.fn();
     wrapper.vm.goToDetails(1);
-        expect(wrapper.vm.$router.push).toHaveBeenCalled();
+    expect(wrapper.vm.$router.push).toHaveBeenCalled();
   })
-  it('Should load the shows data properly when mounted',async ()=>{
-    let mockedResponse = [{"id":2,"name":"Under the Dome","rating":{"average":6.6},
-    "image":{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"},"genres":["Drama","Science-Fiction","Thriller"]}]
+  it('Should load the shows data properly when mounted', async () => {
+    let mockedResponse = [{
+      "id": 2, "name": "Under the Dome", "rating": { "average": 6.6 },
+      "image": { "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" }, "genres": ["Drama", "Science-Fiction", "Thriller"]
+    }]
     await wrapper.vm.getAllTvShows()
     expect(wrapper.vm.showsList).toEqual(mockedResponse);
   })

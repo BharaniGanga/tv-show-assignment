@@ -34,11 +34,11 @@ describe('app.vue', () => {
       '<router-view-stub name="default"></router-view-stub>'
     );
   });
-  it('it should load navbar', ()=> {
+  it('it should load navbar', () => {
     expect(Navbar).toBeTruthy();
   });
 
-  it('it should have navbar-stub', ()=>{
+  it('it should have navbar-stub', () => {
     expect(appWrapper.html()).toContain('<navbar-stub>');
   });
 

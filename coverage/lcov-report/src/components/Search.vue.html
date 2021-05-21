@@ -22,16 +22,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">88.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">88.89% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
@@ -194,23 +194,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,10 +203,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -261,80 +261,80 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-&lt;div&gt;
-  &lt;div  v-if="searchList.length"&gt;
+  &lt;div&gt;
+    &lt;div v-if="searchList.length"&gt;
       &lt;div&gt;
-        &lt;br/&gt;
+        &lt;br /&gt;
         &lt;div class="row"&gt;
-        &lt;div class="tvShowList col-md-3" v-for="shows in searchList" :key="shows.id"&gt;
-                &lt;div class="movies" &gt;
-                    &lt;img
-                    class="show-image"
-                    :src="shows.show.image.medium"
-                    width="200"
-                    height="200"
-                    :alt="shows.show.name"
-                    v-if="shows.show.image"
-                    @click = "goToDetails(shows.show.id)"&gt;
-                    &lt;div v-else style="margin-left: 60px;"&gt;
-                      &lt;img class="card "
-                        width = "200"
-                       height= "200"
-                       alt = Image
-                       @click = "goToDetails(shows.show.id)"&gt;&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;p class="showName"&gt;{{ shows.show.name }}&lt;/p&gt;
+          &lt;div
+            class="tvShowList col-md-3 col-sm-3 col xs-3"
+            v-for="shows in searchList"
+            :key="shows.id"
+          &gt;
+            &lt;div class="movies"&gt;
+              &lt;img
+                class="show-image"
+                :src="shows.show.image.medium"
+                width="200"
+                height="200"
+                :alt="shows.show.name"
+                v-if="shows.show.image"
+                @click="goToDetails(shows.show.id)"
+              /&gt;
+              &lt;div v-else style="margin-left: 60px"&gt;
+                &lt;img
+                  class="card"
+                  width="200"
+                  height="200"
+                  alt="Image"
+                  @click="goToDetails(shows.show.id)"
+                /&gt;
+              &lt;/div&gt;
             &lt;/div&gt;
+            &lt;p class="showName"&gt;{{ shows.show.name }}&lt;/p&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-    
- &lt;/div&gt;
-  &lt;div v-else&gt;
-    &lt;h1&gt;&lt;strong&gt;No results found&lt;/strong&gt;&lt;/h1&gt;
-  &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div v-else&gt;
+      &lt;h1 style="color: yellow"&gt;&lt;strong&gt;No results found&lt;/strong&gt;&lt;/h1&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-import { searchShows } from '@/Service/api';
+import { searchShows } from "@/Service/api";
 &nbsp;
 export default {
-  name: 'Search',
+  name: "Search",
   data() {
     return {
       searchList: [],
-      error: '',
+      error: "",
       searchListIsNotEmpty: true,
     };
   },
-  mounted(){
+  mounted() {
     this.searchTvShow();
   },
   props: ["shows"],
   methods: {
-    
     searchTvShow() {
-      // if(this.shows === undefined)
-      //{
-        //this.$router.push({ name: 'HomePage' })
-     //}
-     //else
-     //{
-      searchShows(this.shows)
-        .then((response) =&gt; {
-          this.searchList = response.data;
-          //if (this.searchList.length === 0) {
-            //this.searchListIsNotEmpty = false;
-          //}
-<span class="fstat-no" title="function not covered" >        })</span>
-        .catch(error =&gt; {
-<span class="cstat-no" title="statement not covered" >          console.log(error);</span>
-        }) 
-     //}
+      if (this.shows === undefined) {
+        this.$router.push({ name: "HomePage" });
+      } else {
+        searchShows(this.shows)
+          .then((response) =&gt; {
+            this.searchList = response.data;
+<span class="fstat-no" title="function not covered" >          })</span>
+          .catch((error) =&gt; {
+<span class="cstat-no" title="statement not covered" >            console.log(error);</span>
+          });
+      }
     },
     goToDetails(id) {
       this.$router.push({
-        name: 'DetailsPage',
+        name: "DetailsPage",
         params: {
           shows: id,
         },
@@ -359,7 +359,7 @@ button {
   margin: 0;
 }
 .showName {
-  color: rgb(53, 61, 168);
+  color: rgb(243, 243, 245);
 }
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
@@ -369,7 +369,7 @@ button {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 23:17:12 GMT+0530 (India Standard Time)
+                at Fri May 21 2021 16:26:25 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\..\prettify.js"></script>

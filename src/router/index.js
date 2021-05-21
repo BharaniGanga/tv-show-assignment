@@ -14,7 +14,7 @@ const routes = [
     component: HomePage,
     props: true
   },
- 
+
   {
     path: '/search',
     name: 'Search',

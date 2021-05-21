@@ -1,12 +1,10 @@
 <template>
   <div>
-    <h1>Page Not Found</h1>
+    <h1 style="color: yellow">Page Not Found</h1>
   </div>
 </template>
 <script>
-export default  {
+export default {
   name: "ErrorPage",
-        
-    
 };
 </script>

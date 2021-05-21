@@ -2,64 +2,63 @@
   <div>
     <div class="container">
       <div class="outer-div">
-         <div class="row">
-           <div class="heading">Popular Shows</div>
-            <div class="scroll">
-          <div
-            class="tvShowList col-md-3"
-            v-for="shows in filteredShows"
-            :key="shows.id"
-          >
-            <div class="movies">
-              <img
-                class="images"
-                :src="shows.image.medium"
-                width="200"
-                height="200"
-                :alt="shows.image.original"
-                @click="goToDetails(shows.id)"
-              />
-              <div>
-                <span>
-                  <b-icon icon="star-fill" class="star-icon"></b-icon>
-                </span>
-                <span class="ml-1 text-white" v-if="shows.rating">
-                  {{ shows.rating.average }}
-                </span>
-              </div>
-              <p class="showName">{{ shows.name }}</p>
-            </div>
-          </div>
-        </div>
-         </div>
-          <div
-            class="tvShowLists row"
-            v-for="shows in categorisedShows"
-            :key="shows.id"
-          >
-              <p class="heading">{{ shows.name }}</p>
-              
+        <div class="row">
+          <div class="heading">Popular Shows</div>
           <div class="scroll">
-              <div class="col-md-3" v-for="show in shows.shows" :key="show.id">
+            <div
+              class="tvShowList col-md-3"
+              v-for="shows in filteredShows"
+              :key="shows.id"
+            >
+              <div class="movies">
                 <img
-                  id="images"
-                  :src="show.image.medium"
+                  class="images"
+                  :src="shows.image.medium"
                   width="200"
                   height="200"
-                  :alt="show.image.original"
-                  @click="goToDetails(show.id)"
+                  :alt="shows.image.original"
+                  @click="goToDetails(shows.id)"
                 />
                 <div>
                   <span>
                     <b-icon icon="star-fill" class="star-icon"></b-icon>
                   </span>
-                  <span class="ml-1 text-white" v-if="show.rating">
-                    {{ show.rating.average }}
+                  <span class="ml-1 text-white" v-if="shows.rating">
+                    {{ shows.rating.average }}
                   </span>
                 </div>
-                <p class="showName">{{ show.name }}</p>
+                <p class="showName">{{ shows.name }}</p>
               </div>
-            
+            </div>
+          </div>
+        </div>
+        <div
+          class="tvShowLists row"
+          v-for="shows in categorisedShows"
+          :key="shows.id"
+        >
+          <p class="heading">{{ shows.name }}</p>
+
+          <div class="scroll">
+            <div class="col-md-3" v-for="show in shows.shows" :key="show.id">
+              <img
+                id="images"
+                :src="show.image.medium"
+                width="200"
+                height="200"
+                :alt="show.image.original"
+                @click="goToDetails(show.id)"
+              />
+              <div>
+                <span>
+                  <b-icon icon="star-fill" class="star-icon"></b-icon>
+                </span>
+                <span class="ml-1 text-white" v-if="show.rating">
+                  {{ show.rating.average }}
+                </span>
+              </div>
+              <p class="showName">{{ show.name }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -90,13 +89,12 @@ export default {
       getAllShows()
         .then((response) => {
           this.showsList = response.data;
-          this.showsList.forEach(shows => {
-            if(shows.rating.average>9)
-          {
-            this.filteredShows.push(shows);
-          }
-          })
-      
+          this.showsList.forEach((shows) => {
+            if (shows.rating.average > 9) {
+              this.filteredShows.push(shows);
+            }
+          });
+
           const set = new Set();
           this.showsList.forEach((i) => {
             i.genres.forEach((j) => {
@@ -104,25 +102,6 @@ export default {
             });
           });
           this.categories = [...set];
-          /* for (var j = 0; j < this.categories.length; j++) {
-            let shw = [];
-            this.showsList.forEach((i) => {
-              if (i.genres.includes(this.categories[j])) {
-                if (i.rating.average >= 8.5) {
-                  shw.push(i);
-                }
-                shw.sort(function (a, b) {
-                  return b.rating.average - a.rating.average;
-                });
-              }
-            });
-            const computedShows = {
-              name: this.categories[j],
-              shows: shw,
-            };
-
-            this.categorisedShows.push(computedShows);
-          } */
           this.categorisedShows = this.categories.map((genre) => {
             const shows = this.showsList
               .filter((show) => show.genres.includes(genre))
@@ -133,17 +112,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-        
     },
-   /*  sortShows() {
-      console.log("hi");
-          if(this.showsList.rating.average>8.5)
-          {
-            console.log("hi");
-            this.filteredShows=this.showsList;
-            console.log(this.filteredShows)
-          }
-        }, */
 
     goToDetails(id) {
       this.$router.push({
@@ -173,14 +142,10 @@ img:hover {
   font-size: 30px;
   color: rgb(116, 199, 224);
 }
-.col-md-3{
-  padding: 1px;
+.col-md-3 {
+  padding: 15px;
 }
-.rating {
-  font-style: oblique;
-  font-size: 15px;
-  color: rgba(234, 238, 240, 0.966);
-}
+
 .showName {
   font-style: oblique;
   font-size: 15px;
@@ -189,30 +154,26 @@ img:hover {
 .star-icon {
   color: rgb(207, 204, 25);
 }
-.scroll{
-    display: flex;
-    overflow-x: auto;
+.scroll {
+  display: flex;
+  overflow-x: auto;
 }
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
   padding: 100px;
 }
- 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   padding: 100px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
   padding: 100px;
 }
-
 </style>

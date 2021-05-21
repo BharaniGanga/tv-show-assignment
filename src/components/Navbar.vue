@@ -1,10 +1,10 @@
 <template>
   <div>
     <nav class="navbar navbar-light bg-warning">
-        <router-link class="nav-link" :to="{ name: 'HomePage' }">
-          <b-icon icon="display" class="navbar-icon"></b-icon>
-          TVSHOWS
-        </router-link>
+      <router-link class="nav-link" :to="{ name: 'HomePage' }">
+        <b-icon icon="display" class="navbar-icon"></b-icon>
+        TVSHOWS
+      </router-link>
       <div class="ml-auto float-right">
         <div class="search">
           <div class="input-group col-md-3">
@@ -50,12 +50,12 @@ export default {
 };
 </script>
 <style scoped>
-.search{
-     height: 86px;
-    padding-right: 1px;
-    position: absolute;
-    right: 15px;
-    width: 50%;
-    margin-top: -20px;
+.search {
+  height: 86px;
+  padding-right: 1px;
+  position: absolute;
+  right: 15px;
+  width: 50%;
+  margin-top: -20px;
 }
 </style>

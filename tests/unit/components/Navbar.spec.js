@@ -25,9 +25,9 @@ describe('Navbar.vue', () => {
   it('is a Vue instance', () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
-  it('calling the router',()=>{
-    wrapper.vm.$router.push= jest.fn();
+  it('calling the router', () => {
+    wrapper.vm.$router.push = jest.fn();
     wrapper.vm.goToSearch();
-        expect(wrapper.vm.$router.push).toHaveBeenCalled();
+    expect(wrapper.vm.$router.push).toHaveBeenCalled();
   })
 });
