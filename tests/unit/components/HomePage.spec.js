@@ -60,6 +60,7 @@ describe('HomePage.vue', () => {
     const imgtest = wrapper.find('img');
     expect(imgtest.element.id).toBe('images');
   });
+  
   it('calling the router', () => {
     wrapper.vm.$router.push = jest.fn();
     wrapper.vm.goToDetails(1);

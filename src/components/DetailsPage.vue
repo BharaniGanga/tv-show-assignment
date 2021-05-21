@@ -41,7 +41,7 @@
         <a :href="showDetails.officialSite">{{ showDetails.officialSite }}</a>
       </p>
       <p style="color: white" v-else>Not Available</p>
-      <h3 class="heading">Seasons Available</h3>
+       <h3 class="heading">Seasons Available</h3>
       <div class="row">
         <div
           class="movie-season col-md-3 col-sm-3 col xs-3"
@@ -60,7 +60,7 @@
             <p class="sub-heading">Season{{ season.number }}</p>
           </div>
         </div>
-      </div>
+      </div> 
       <h3 class="heading">Cast</h3>
       <div class="row">
         <div
@@ -88,7 +88,8 @@
 </template>
 <script>
 import { getShowDetails } from "@/Service/api.js";
-import { getShowSeason } from "@/Service/api.js";
+//import { getShowSeason } from "@/Service/api.js";
+import { getShowCasts } from "@/Service/api.js";
 
 export default {
   name: "DetailsPage",
@@ -103,6 +104,7 @@ export default {
   mounted() {
     this.getTvShowDetails();
     this.getTvShowSeasons();
+    this.getTvShowCasts();
   },
 
   methods: {
@@ -114,18 +116,28 @@ export default {
         getShowDetails(this.shows)
           .then((response) => {
             this.showDetails = response.data;
-            this.tvShowCast = this.showDetails._embedded.cast;
           })
           .catch((error) => {
             console.log(error);
           });
       }
     },
-    getTvShowSeasons() {
+     getTvShowSeasons() {
       if (this.shows !== undefined) {
         getShowSeason(this.shows)
           .then((response) => {
             this.showSeason = response.data;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    }, 
+    getTvShowCasts() {
+      if (this.shows !== undefined) {
+        getShowCasts(this.shows)
+          .then((response) => {
+            this.tvShowCast = response.data;
           })
           .catch((error) => {
             console.log(error);

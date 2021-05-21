@@ -59,7 +59,7 @@ describe('Search.vue', () => {
 )
     wrapper.vm.$router.push = jest.fn();
     wrapper.vm.searchTvShow();
-    expect(wrapper.vm.$router.push).toHaveBeenCalled();
+    expect(wrapper.vm.$route.path).toBe('/');
   }) 
 
 });

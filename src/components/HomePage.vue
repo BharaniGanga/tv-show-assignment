@@ -145,7 +145,6 @@ img:hover {
 .col-md-3 {
   padding: 15px;
 }
-
 .showName {
   font-style: oblique;
   font-size: 15px;

@@ -8,7 +8,9 @@ export function searchShows(query) {
 export function getShowDetails(id) {
   return axios.get(`http://api.tvmaze.com/shows/${id}?embed=cast`);
 }
-export function getShowSeason(id) {
+/* export function getShowSeason(id) {
   return axios.get(`http://api.tvmaze.com/shows/${id}/seasons`);
+} */
+export function getShowCasts(id) {
+  return axios.get(`http://api.tvmaze.com/shows/${id}/cast`);
 }
-
