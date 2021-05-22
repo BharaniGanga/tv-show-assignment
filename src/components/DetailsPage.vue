@@ -88,14 +88,14 @@
 </template>
 <script>
 import { getShowDetails } from "@/Service/api.js";
-//import { getShowSeason } from "@/Service/api.js";
+import { getShowSeason } from "@/Service/api.js";
 import { getShowCasts } from "@/Service/api.js";
 
 export default {
   name: "DetailsPage",
   data() {
     return {
-      showDetails: "",
+      showDetails: {},
       tvShowCast: [],
       showSeason: [],
     };
@@ -116,6 +116,7 @@ export default {
         getShowDetails(this.shows)
           .then((response) => {
             this.showDetails = response.data;
+            console.log(response.data);
           })
           .catch((error) => {
             console.log(error);
