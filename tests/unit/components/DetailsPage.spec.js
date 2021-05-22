@@ -77,7 +77,13 @@ describe('HomePage.vue', () => {
         },
           tvShowCast: cast,
           showSeason: season,
-          
+          propsData: {
+            shows: {"id":1,"url":"https://www.tvmaze.com/shows/1/under-the-dome","genres":
+            ["Drama","Science-Fiction","Thriller"],"rating":{"average":6.6},
+            "image":{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"},
+            "summary":"<p><b>Under the Dome</b></p>",
+            }
+          }
         };
       },
   
@@ -131,15 +137,29 @@ describe('HomePage.vue', () => {
   })  */
 
   it('Should search the CastDetails properly when mounted', async () => {
+    let detailswrapper;
     let mockedResponse = [{
       "person": { "id": 1, "url": "https://www.tvmaze.com/people/1/mike-vogel", "name": "Mike Vogel", "image": { "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/1815.jpg" } },
     }]
+    detailswrapper = shallowMount(DetailsPage,{
+      localVue,
+      router,
+      propsData: {
+        shows: {"id":1,"url":"https://www.tvmaze.com/shows/1/under-the-dome","genres":
+        ["Drama","Science-Fiction","Thriller"],"rating":{"average":6.6},
+        "image":{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"},
+        "summary":"<p><b>Under the Dome</b></p>",
+        }
+      }
+  }
+    )
     
-    await wrapper.vm.getTvShowCasts();
+    
+    await detailswrapper.vm.getTvShowCasts();
     //wrapper.vm.getShowCasts.toHaveBeenCalled();
-    //wrapper.vm.shows=1;
-    console.log("tvshows",wrapper.vm.tvShowCast)
-    expect(wrapper.vm.tvShowCast).toEqual(mockedResponse);
+    detailswrapper.vm.getShowCasts= jest.fn();
+    //expect(detailswrapper.vm.getShowCasts).toHaveBeenCalled();
+    expect(detailswrapper.vm.tvShowCast).toEqual(mockedResponse);
   }) 
 
 
