@@ -35,7 +35,7 @@
       </div>
     </div>
     <div v-else>
-      <h1 style="color: yellow"><strong>No results found</strong></h1>
+      <h1 class="no-shows"><strong>No results found</strong></h1>
     </div>
   </div>
 </template>
@@ -48,7 +48,6 @@ export default {
   data() {
     return {
       searchList: [],
-      error: "",
       searchListIsNotEmpty: true,
     };
   },
@@ -85,5 +84,8 @@ export default {
 <style scoped>
 .showName {
   color: rgb(243, 243, 245);
+}
+.no-shows {
+  color: yellow;
 }
 </style>

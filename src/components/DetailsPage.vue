@@ -4,9 +4,7 @@
       <h3 class="heading">Details of movie {{ showDetails.name }}</h3>
       <img
         :src="showDetails.image.medium"
-        class="float-left"
         max-height="200"
-        style="margin-top: 20px; margin-bottom: 10px"
         v-if="showDetails.image"
       />
       <div v-else>
@@ -16,41 +14,36 @@
         <span>
           <b-icon icon="star-fill" class="star-icon"></b-icon>
         </span>
-        <span
-          class="show-rating"
-          style="color: white"
-          v-if="showDetails.rating"
-        >
+        <span class="show-Details" v-if="showDetails.rating">
           {{ showDetails.rating.average }}
         </span>
       </div>
-      <div style="color: white" v-if="showDetails.language">
+      <div class="show-Details" v-if="showDetails.language">
         <b>Language: {{ showDetails.language }}</b>
       </div>
-      <div v-else style="color: white">NA</div>
+      <div v-else class="show-Details">NA</div>
       <div>
-        <div style="color: white" v-if="showDetails.premiered">
+        <div class="show-Details" v-if="showDetails.premiered">
           <b>Premiered on: {{ showDetails.premiered }}</b>
         </div>
-        <span style="color: white" v-else>Not Available</span>
+        <span class="show-Details" v-else>Not Available</span>
       </div>
       <h3 class="heading">Summary</h3>
-      <p style="color: white" v-html="showDetails.summary"></p>
-      <h6 style="color: white">official Link:</h6>
+      <p class="show-Details" v-html="showDetails.summary"></p>
+      <h6 class="show-Details">official Link:</h6>
       <p v-if="showDetails.officialSite" class="text-color">
         <a :href="showDetails.officialSite">{{ showDetails.officialSite }}</a>
       </p>
-      <p style="color: white" v-else>Not Available</p>
-       <h3 class="heading">Seasons Available</h3>
+      <p class="show-Details" v-else>Not Available</p>
+      <h3 class="heading">Seasons Available</h3>
       <div class="row">
         <div
           class="movie-season col-md-3 col-sm-3 col xs-3"
           v-for="(season, index) in showSeason"
           :key="index"
         >
-          <div class="cast-post">
+          <div>
             <img
-              class=""
               width="150"
               height="150"
               :src="season.image.medium"
@@ -60,7 +53,7 @@
             <p class="sub-heading">Season{{ season.number }}</p>
           </div>
         </div>
-      </div> 
+      </div>
       <h3 class="heading">Cast</h3>
       <div class="row">
         <div
@@ -70,11 +63,11 @@
         >
           <div class="container">
             <img
+              class="shows-cast"
               width="50"
               height="100"
               :src="cast.person.image.medium"
               v-if="cast.person.image"
-              style="border-radius: 50%"
             />
             <div v-else>Image not Available</div>
             <p class="sub-heading">
@@ -109,21 +102,19 @@ export default {
 
   methods: {
     getTvShowDetails() {
-      //Fetch relevant shows list based on searched string
       if (this.shows === undefined) {
         this.$router.push({ name: "HomePage" });
       } else {
         getShowDetails(this.shows)
           .then((response) => {
             this.showDetails = response.data;
-            console.log(response.data);
           })
           .catch((error) => {
             console.log(error);
           });
       }
     },
-     getTvShowSeasons() {
+    getTvShowSeasons() {
       if (this.shows !== undefined) {
         getShowSeason(this.shows)
           .then((response) => {
@@ -133,7 +124,7 @@ export default {
             console.log(error);
           });
       }
-    }, 
+    },
     getTvShowCasts() {
       if (this.shows !== undefined) {
         getShowCasts(this.shows)
@@ -164,5 +155,11 @@ export default {
 }
 .sub-heading {
   color: rgb(252, 252, 248);
+}
+.show-Details {
+  color: beige;
+}
+.shows-cast {
+  border-radius: 50%;
 }
 </style>

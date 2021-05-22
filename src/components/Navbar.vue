@@ -11,7 +11,6 @@
             <input
               type="text"
               class="form-control"
-              size="sm"
               placeholder="Search"
               v-model="inputValue"
             />

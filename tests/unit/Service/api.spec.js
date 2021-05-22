@@ -1,4 +1,4 @@
-import { getAllShows, searchShows,getShowDetails,getShowSeason,getShowCasts } from '@/Service/api'
+import { getAllShows, searchShows, getShowDetails, getShowSeason, getShowCasts } from '@/Service/api'
 import axios from 'axios'
 
 jest.mock('axios');
@@ -25,14 +25,14 @@ describe('In TV Show Service', () => {
             expect(response).toEqual(showMockData);
         })
     })
-    /* it('Mocking getShowsByName method ', () => {
+    it('Mocking getSeasons method ', () => {
         const showMockData = ["Breaking Bad", "The Wire"];
         axios.get.mockResolvedValue(showMockData);
         getShowSeason('Breaking').then(response => {
             expect(response).toEqual(showMockData);
         })
-    }) */
-    it('Mocking getShowsByName method ', () => {
+    })
+    it('Mocking getShowsCasts method ', () => {
         const showMockData = ["Bryan Cranston", "RJ Mitte"];
         axios.get.mockResolvedValue(showMockData);
         getShowCasts('Bryan').then(response => {

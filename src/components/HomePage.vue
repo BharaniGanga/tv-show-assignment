@@ -23,7 +23,7 @@
                   <span>
                     <b-icon icon="star-fill" class="star-icon"></b-icon>
                   </span>
-                  <span class="ml-1 text-white" v-if="shows.rating">
+                  <span class="show-rating" v-if="shows.rating">
                     {{ shows.rating.average }}
                   </span>
                 </div>
@@ -53,7 +53,7 @@
                 <span>
                   <b-icon icon="star-fill" class="star-icon"></b-icon>
                 </span>
-                <span class="ml-1 text-white" v-if="show.rating">
+                <span class="show-rating" v-if="show.rating">
                   {{ show.rating.average }}
                 </span>
               </div>
@@ -109,9 +109,9 @@ export default {
             return { name: genre, shows };
           });
         })
-        .catch((error) => {
+         .catch((error) => {
           console.log(error);
-        });
+        }); 
     },
 
     goToDetails(id) {
@@ -152,6 +152,9 @@ img:hover {
 }
 .star-icon {
   color: rgb(207, 204, 25);
+}
+.show-rating{
+  color: white;
 }
 .scroll {
   display: flex;
