@@ -1,12 +1,13 @@
 <template>
   <div>
+    <Navbar />
     <div class="container">
       <div class="outer-div">
         <div class="row">
           <div class="heading">Popular Shows</div>
           <div class="scroll">
             <div
-              class="tvShowList col-md-3"
+              class="tvShow col-md-3"
               v-for="shows in filteredShows"
               :key="shows.id"
             >
@@ -68,9 +69,13 @@
 
 <script>
 import { getAllShows } from "@/Service/api";
+import Navbar from "./Navbar.vue";
 
 export default {
   name: "HomePage",
+  components: {
+    Navbar,
+  },
   data() {
     return {
       showsList: [],
@@ -109,9 +114,9 @@ export default {
             return { name: genre, shows };
           });
         })
-         .catch((error) => {
+        .catch((error) => {
           console.log(error);
-        }); 
+        });
     },
 
     goToDetails(id) {
@@ -142,9 +147,15 @@ img:hover {
   font-size: 30px;
   color: rgb(116, 199, 224);
 }
-.col-md-3 {
-  padding: 15px;
+@media only screen and(max-width: 768px){
+  .tvShow{
+  padding: 30px;
+  margin-left: 20px !important; 
 }
+  
+ 
+}
+
 .showName {
   font-style: oblique;
   font-size: 15px;
@@ -153,7 +164,7 @@ img:hover {
 .star-icon {
   color: rgb(207, 204, 25);
 }
-.show-rating{
+.show-rating {
   color: white;
 }
 .scroll {

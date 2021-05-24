@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isDataNotNull">
     <div class="container">
       <h3 class="heading">Details of movie {{ showDetails.name }}</h3>
       <img
@@ -62,14 +62,14 @@
           :key="index"
         >
           <div class="container">
-            <img
+             <img
               class="shows-cast"
               width="50"
               height="100"
               :src="cast.person.image.medium"
               v-if="cast.person.image"
             />
-            <div v-else>Image not Available</div>
+            <div v-else>Image not Available</div> 
             <p class="sub-heading">
               {{ cast.person.name }}
             </p>
@@ -77,6 +77,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div v-else>
+    <h3 class="text-danger">No Data Found...!!!</h3>
   </div>
 </template>
 <script>
@@ -91,20 +94,23 @@ export default {
       showDetails: {},
       tvShowCast: [],
       showSeason: [],
+      isDataNotNull: true,
     };
   },
   props: ["shows"],
   mounted() {
+    if (this.shows !== undefined) {
     this.getTvShowDetails();
     this.getTvShowSeasons();
     this.getTvShowCasts();
+    }
+    else{
+      this.isDataNotNull=false;
+    }
   },
 
   methods: {
     getTvShowDetails() {
-      if (this.shows === undefined) {
-        this.$router.push({ name: "HomePage" });
-      } else {
         getShowDetails(this.shows)
           .then((response) => {
             this.showDetails = response.data;
@@ -112,10 +118,8 @@ export default {
           .catch((error) => {
             console.log(error);
           });
-      }
     },
     getTvShowSeasons() {
-      if (this.shows !== undefined) {
         getShowSeason(this.shows)
           .then((response) => {
             this.showSeason = response.data;
@@ -123,18 +127,15 @@ export default {
           .catch((error) => {
             console.log(error);
           });
-      }
     },
     getTvShowCasts() {
-      if (this.shows !== undefined) {
         getShowCasts(this.shows)
           .then((response) => {
             this.tvShowCast = response.data;
           })
           .catch((error) => {
             console.log(error);
-          });
-      }
+          }); 
     },
   },
 };
