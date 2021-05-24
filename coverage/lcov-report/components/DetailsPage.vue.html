@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">56.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/16</span>
+                <span class='fraction'>9/16</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.18% </span>
+                <span class="strong">45.45% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/11</span>
+                <span class='fraction'>5/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">56.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/16</span>
+                <span class='fraction'>9/16</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -314,7 +314,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -323,28 +323,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -353,7 +344,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -452,14 +452,14 @@
           :key="index"
         &gt;
           &lt;div class="container"&gt;
-            &lt;!-- &lt;img
+             &lt;img
               class="shows-cast"
               width="50"
               height="100"
               :src="cast.person.image.medium"
               v-if="cast.person.image"
-            /&gt; 
-            &lt;div v-else&gt;Image not Available&lt;/div&gt; --&gt;
+            /&gt;
+            &lt;div v-else&gt;Image not Available&lt;/div&gt; 
             &lt;p class="sub-heading"&gt;
               {{ cast.person.name }}
             &lt;/p&gt;
@@ -489,19 +489,19 @@ export default {
   },
   props: ["shows"],
   mounted() {
-<span class="missing-if-branch" title="if path not taken" >I</span>    if (this.shows !== undefined) {
-<span class="cstat-no" title="statement not covered" >    this.getTvShowDetails();</span>
-<span class="cstat-no" title="statement not covered" >    this.getTvShowSeasons();</span>
-<span class="cstat-no" title="statement not covered" >    this.getTvShowCasts();</span>
+<span class="missing-if-branch" title="else path not taken" >E</span>    if (this.shows !== undefined) {
+    this.getTvShowDetails();
+    this.getTvShowSeasons();
+    this.getTvShowCasts();
     }
     else{
-      this.isDataNotNull=false;
+<span class="cstat-no" title="statement not covered" >      this.isDataNotNull=false;</span>
     }
   },
 &nbsp;
   methods: {
-<span class="fstat-no" title="function not covered" >    getTvShowDetails() {</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        getShowDetails(this.shows)</span></span>
+    getTvShowDetails() {
+<span class="fstat-no" title="function not covered" >        getShowDetails(this.shows)</span>
           .then((response) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.showDetails = response.data;</span>
 <span class="fstat-no" title="function not covered" >          })</span>
@@ -509,8 +509,8 @@ export default {
 <span class="cstat-no" title="statement not covered" >            console.log(error);</span>
           });
     },
-<span class="fstat-no" title="function not covered" >    getTvShowSeasons() {</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        getShowSeason(this.shows)</span></span>
+    getTvShowSeasons() {
+<span class="fstat-no" title="function not covered" >        getShowSeason(this.shows)</span>
           .then((response) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.showSeason = response.data;</span>
 <span class="fstat-no" title="function not covered" >          })</span>
@@ -518,8 +518,8 @@ export default {
 <span class="cstat-no" title="statement not covered" >            console.log(error);</span>
           });
     },
-<span class="fstat-no" title="function not covered" >    getTvShowCasts() {</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        getShowCasts(this.shows)</span></span>
+    getTvShowCasts() {
+<span class="fstat-no" title="function not covered" >        getShowCasts(this.shows)</span>
           .then((response) =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.tvShowCast = response.data;</span>
 <span class="fstat-no" title="function not covered" >          })</span>
@@ -561,7 +561,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 24 2021 23:32:16 GMT+0530 (India Standard Time)
+                at Tue May 25 2021 00:29:56 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\prettify.js"></script>
