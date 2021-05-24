@@ -63,7 +63,7 @@ describe('DetailsPage.vue', () => {
     expect(wrapper.vm.showDetails).toBeDefined();
   }) 
 
-  it('Should search the showDetails properly when mounted', async () => {
+  it('Should search the seasonDetails properly when mounted', async () => {
     let mockedResponse = [{
       "id": 3,
           "url": "https://www.tvmaze.com/seasons/3/person-of-interest-season-1",

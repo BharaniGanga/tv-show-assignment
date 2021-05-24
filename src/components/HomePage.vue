@@ -7,7 +7,7 @@
           <div class="heading">Popular Shows</div>
           <div class="scroll">
             <div
-              class="tvShow col-md-3"
+              class="tvShow col-lg-3 col-md-4 col-sm-6"
               v-for="shows in filteredShows"
               :key="shows.id"
             >
@@ -41,7 +41,7 @@
           <p class="heading">{{ shows.name }}</p>
 
           <div class="scroll">
-            <div class="col-md-3" v-for="show in shows.shows" :key="show.id">
+            <div class="col-lg-3 col-md-4 col-sm-6" v-for="show in shows.shows" :key="show.id">
               <img
                 id="images"
                 :src="show.image.medium"
@@ -147,14 +147,6 @@ img:hover {
   font-size: 30px;
   color: rgb(116, 199, 224);
 }
-@media only screen and(max-width: 768px){
-  .tvShow{
-  padding: 30px;
-  margin-left: 20px !important; 
-}
-  
- 
-}
 
 .showName {
   font-style: oblique;
@@ -189,4 +181,5 @@ img:hover {
   background: #555;
   padding: 100px;
 }
+
 </style>
