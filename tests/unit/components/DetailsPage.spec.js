@@ -19,8 +19,8 @@ describe('DetailsPage.vue', () => {
     wrapper = shallowMount(DetailsPage, {
       localVue,
       router,
-      propsData:{
-        shows:1
+      propsData: {
+        shows: 1
       }
 
     });
@@ -29,53 +29,63 @@ describe('DetailsPage.vue', () => {
   afterEach(() => {
     wrapper.destroy();
   });
-   it('is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
-  it('should find show casts service',async () => {
+  it('should find show casts service', async () => {
     jest.mock('@/Service/api', () => ({
       get: () => {
-      return Promise.resolve({
-        data: true
-      })
-    },
-  })); 
+        return Promise.resolve({
+          data: true
+        })
+      },
+    }));
 
-  const localWrapper=shallowMount(DetailsPage, {
-    localVue,
-    router,
-    propsData:{
-      shows: 1
+    const localWrapper = shallowMount(DetailsPage, {
+      localVue,
+      router,
+      propsData: {
+        shows: {
+          "id": 1, "url": "https://www.tvmaze.com/shows/1/under-the-dome", "genres":
+            ["Drama", "Science-Fiction", "Thriller"], "rating": { "average": 6.6 },
+          "image": { "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" },
+          "summary": "<p><b>Under the Dome</b></p>",
+        }
+      }
     }
-  }
-  )
+    )
 
-  const resp = await localWrapper.vm.getTvShowCasts();
-  expect(localWrapper.vm.tvShowCast).toBeDefined(); 
+    const resp = await localWrapper.vm.getTvShowCasts();
+    expect(localWrapper.vm.tvShowCast).toBeDefined();
 
   });
-   it('Should search the showDetails properly when mounted', async () => {
+  it('should find p tag', () => {
+    expect(wrapper.html()).toContain("p")
+  });
+  it('Should search the showDetails properly when mounted', async () => {
     let mockedResponse = {
       "id": 2, "name": "Under the Dome", "rating": { "average": 6.6 },
       "image": { "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" }, "genres": ["Drama", "Science-Fiction", "Thriller"]
     }
     await wrapper.vm.getTvShowDetails();
     expect(wrapper.vm.showDetails).toBeDefined();
-  }) 
+  })
 
   it('Should search the seasonDetails properly when mounted', async () => {
     let mockedResponse = [{
       "id": 3,
-          "url": "https://www.tvmaze.com/seasons/3/person-of-interest-season-1",
-          "number": 1,
-          "image": {
-            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/24/60864.jpg",}}]
-    
+      "url": "https://www.tvmaze.com/seasons/3/person-of-interest-season-1",
+      "number": 1,
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/24/60864.jpg",
+      }
+    }]
+
     await wrapper.vm.getTvShowSeasons();
     expect(wrapper.vm.showSeason).toBeDefined();
-  }) 
+  })
 
-   
+
 
 });
 

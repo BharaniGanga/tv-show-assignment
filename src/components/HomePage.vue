@@ -41,7 +41,11 @@
           <p class="heading">{{ shows.name }}</p>
 
           <div class="scroll">
-            <div class="col-lg-3 col-md-4 col-sm-6" v-for="show in shows.shows" :key="show.id">
+            <div
+              class="col-lg-3 col-md-4 col-sm-6"
+              v-for="show in shows.shows"
+              :key="show.id"
+            >
               <img
                 id="images"
                 :src="show.image.medium"
@@ -91,32 +95,28 @@ export default {
 
   methods: {
     getAllTvShows() {
-      getAllShows()
-        .then((response) => {
-          this.showsList = response.data;
-          this.showsList.forEach((shows) => {
-            if (shows.rating.average > 9) {
-              this.filteredShows.push(shows);
-            }
-          });
-
-          const set = new Set();
-          this.showsList.forEach((i) => {
-            i.genres.forEach((j) => {
-              set.add(j);
-            });
-          });
-          this.categories = [...set];
-          this.categorisedShows = this.categories.map((genre) => {
-            const shows = this.showsList
-              .filter((show) => show.genres.includes(genre))
-              .sort((a, b) => b.rating.average - a.rating.average);
-            return { name: genre, shows };
-          });
-        })
-        .catch((error) => {
-          console.log(error);
+      getAllShows().then((response) => {
+        this.showsList = response.data;
+        this.showsList.forEach((shows) => {
+          if (shows.rating.average > 9) {
+            this.filteredShows.push(shows);
+          }
         });
+
+        const set = new Set();
+        this.showsList.forEach((i) => {
+          i.genres.forEach((j) => {
+            set.add(j);
+          });
+        });
+        this.categories = [...set];
+        this.categorisedShows = this.categories.map((genre) => {
+          const shows = this.showsList
+            .filter((show) => show.genres.includes(genre))
+            .sort((a, b) => b.rating.average - a.rating.average);
+          return { name: genre, shows };
+        });
+      });
     },
 
     goToDetails(id) {
@@ -163,6 +163,9 @@ img:hover {
   display: flex;
   overflow-x: auto;
 }
+.tvShow {
+  padding: 15px;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -181,5 +184,4 @@ img:hover {
   background: #555;
   padding: 100px;
 }
-
 </style>

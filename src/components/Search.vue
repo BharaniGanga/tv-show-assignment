@@ -60,13 +60,9 @@ export default {
       if (this.shows === undefined) {
         this.$router.push({ name: "HomePage" });
       } else {
-        searchShows(this.shows)
-          .then((response) => {
-            this.searchList = response.data;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        searchShows(this.shows).then((response) => {
+          this.searchList = response.data;
+        });
       }
     },
     goToDetails(id) {

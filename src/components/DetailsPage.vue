@@ -62,14 +62,14 @@
           :key="index"
         >
           <div class="container">
-             <img
+            <img
               class="shows-cast"
               width="50"
               height="100"
               :src="cast.person.image.medium"
               v-if="cast.person.image"
             />
-            <div v-else>Image not Available</div> 
+            <div v-else>Image not Available</div>
             <p class="sub-heading">
               {{ cast.person.name }}
             </p>
@@ -100,42 +100,29 @@ export default {
   props: ["shows"],
   mounted() {
     if (this.shows !== undefined) {
-    this.getTvShowDetails();
-    this.getTvShowSeasons();
-    this.getTvShowCasts();
-    }
-    else{
-      this.isDataNotNull=false;
+      this.getTvShowDetails();
+      this.getTvShowSeasons();
+      this.getTvShowCasts();
+    } else {
+      this.isDataNotNull = false;
     }
   },
 
   methods: {
     getTvShowDetails() {
-        getShowDetails(this.shows)
-          .then((response) => {
-            this.showDetails = response.data;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+      getShowDetails(this.shows).then((response) => {
+        this.showDetails = response.data;
+      });
     },
     getTvShowSeasons() {
-        getShowSeason(this.shows)
-          .then((response) => {
-            this.showSeason = response.data;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+      getShowSeason(this.shows).then((response) => {
+        this.showSeason = response.data;
+      });
     },
     getTvShowCasts() {
-        getShowCasts(this.shows)
-          .then((response) => {
-            this.tvShowCast = response.data;
-          })
-          .catch((error) => {
-            console.log(error);
-          }); 
+      getShowCasts(this.shows).then((response) => {
+        this.tvShowCast = response.data;
+      });
     },
   },
 };
