@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1621882796476" clover="3.2.0">
-  <project timestamp="1621882796476" name="All files">
+<coverage generated="1621918581555" clover="3.2.0">
+  <project timestamp="1621918581555" name="All files">
     <metrics statements="54" coveredstatements="44" conditionals="6" coveredconditionals="4" methods="35" coveredmethods="27" elements="95" coveredelements="75" complexity="0" loc="54" ncloc="54" packages="3" files="6" classes="6"/>
     <package name="Service">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
@@ -8,9 +8,9 @@
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
         <line num="3" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="15" count="7" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
       </file>
     </package>
     <package name="components">
@@ -18,19 +18,19 @@
       <file name="DetailsPage.vue" path="C:\Users\BHKOLLA\Downloads\tvshow-assignment\src\components\DetailsPage.vue">
         <metrics statements="16" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="11" coveredmethods="5"/>
         <line num="86" count="4" type="stmt"/>
-        <line num="93" count="5" type="stmt"/>
-        <line num="102" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="103" count="5" type="stmt"/>
-        <line num="104" count="5" type="stmt"/>
-        <line num="105" count="5" type="stmt"/>
+        <line num="93" count="7" type="stmt"/>
+        <line num="102" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="103" count="7" type="stmt"/>
+        <line num="104" count="7" type="stmt"/>
+        <line num="105" count="7" type="stmt"/>
         <line num="108" count="0" type="stmt"/>
-        <line num="114" count="6" type="stmt"/>
+        <line num="114" count="8" type="stmt"/>
         <line num="116" count="0" type="stmt"/>
         <line num="119" count="0" type="stmt"/>
-        <line num="123" count="6" type="stmt"/>
+        <line num="123" count="8" type="stmt"/>
         <line num="125" count="0" type="stmt"/>
         <line num="128" count="0" type="stmt"/>
-        <line num="132" count="6" type="stmt"/>
+        <line num="132" count="8" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
         <line num="137" count="0" type="stmt"/>
       </file>

@@ -2,8 +2,18 @@
 
 ## Description
 ```
-This application is displayed based on the different categories of genres of the Tv shows.You can search for a show and also view the details of the show.
+This application is displayed based on the different categories of genres of the Tv shows.You can search for a show and also view the details of the particular show.
+
 ```
+## Main Stack
+```
+-HTML5
+-CSS
+-Bootstrap Vue
+-ECMAScript 6
+
+```
+
 ## Deatils
 ```
 Framework used - Vue.JS
@@ -14,6 +24,7 @@ Vue cli version - 4.5.11
 Unit Testing framework - Jest
 Routes management: VueRouter
 HTTP client - Axios
+Unit testing: Jest
 ```
 ## Project setup
 
