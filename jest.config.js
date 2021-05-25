@@ -10,8 +10,6 @@ module.exports = {
     '!**/main.js',
     '!**/coverage/**',
     '!**/plugins/bootstrap-vue.js**',
-    // '!**/service/apiServices.js**',
-    // '!**/store/store.js**',
 
   ],
   coverageThreshold: {
